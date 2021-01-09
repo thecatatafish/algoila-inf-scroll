@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroll Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Algolia Search</h1>
+        </div>
+        <div class="searchbox">
+            <form autocomplete="off" onSubmit="return false;">
+            <input type="text" id="searchinput" oninput="debouncedSearch(this.value)">
+            </form>
+        </div>
+        <div id="search-results"></div>
+        <button onclick="topFunction()" id="go-to-top">Go to Top</button>
+    </div>
+
+
+</body>
+<footer>
+    <script src="index.js"></script>
+</footer>
+
+</html>

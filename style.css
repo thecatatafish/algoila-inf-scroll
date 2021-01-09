@@ -1,0 +1,40 @@
+body {
+    max-width: 980px;
+    margin: auto;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 1rem;
+}
+
+.title {
+    font-weight: 600;
+    margin-bottom: 1rem
+}
+
+#go-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    /* right: 0px; */
+    /* z-index: 99; */
+    font-size: 18px;
+    /* border: none;
+    outline: none; */
+    background-color: rgba(122, 122, 122, 0.75);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
