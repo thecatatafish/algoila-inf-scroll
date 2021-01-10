@@ -11,4 +11,4 @@ Therefore I made this small example project where I implemented an infinite scro
 
 
 ## Live Example
-[thecatatafish.github.io](thecatatafish.github.io)
+[thecatatafish.github.io](http://thecatatafish.github.io)
