@@ -1,18 +1,23 @@
+// Settings
+const MAX_PAGES_INF_SCROLL = 2;
+
+
 // Algolia parameters
-API_KEY = "6be0576ff61c053d5f9a3225e2a90f76";
-APPLICATION_ID = "latency";
-INDEX = "instant_search";
+const API_KEY = "6be0576ff61c053d5f9a3225e2a90f76";
+const APPLICATION_ID = "latency";
+const INDEX = "instant_search";
 const url = `https://${APPLICATION_ID}-dsn.algolia.net/1/indexes/${INDEX}/query`;
 
-// Initialize variables
+// Initialize global variables
 let current_page = 0;
 let hits_array = [];
-var timerId;
+let timerId;
 
 // CSS Selectors
-let search_results_container = document.getElementById("search-results");
-var to_top_botton = document.getElementById("go-to-top");
+const search_results_container = document.getElementById("search-results");
+const to_top_botton = document.getElementById("go-to-top");
 
+// Each hit will be rendered with this function
 function renderHitTemplate(name, description) {
   return `
     <div class=card>
@@ -22,6 +27,7 @@ function renderHitTemplate(name, description) {
 `;
 }
 
+// This function is to make sure we don't fire off the API call when user is typing
 function debounce(func, delay, arguments) {
   // Cancels the setTimeout method execution
   clearTimeout(timerId);
@@ -30,12 +36,14 @@ function debounce(func, delay, arguments) {
   timerId = setTimeout(func, delay, arguments);
 }
 
+// Flush out the results if a new query is entered
 function resetResults() {
   hits_array = [];
   search_results_container.innerHTML = "";
   current_page = 0;
 }
 
+// As the user types in the searchbox we update the results shown on the page
 function searchboxEntry(query) {
   resetResults();
   search(query).then((data) => {
@@ -49,6 +57,7 @@ function searchboxEntry(query) {
   });
 }
 
+// Debounce the user search
 function debouncedSearch(query) {
   debounce(searchboxEntry, 500, { query });
 }
@@ -108,10 +117,11 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
+// Scrolling actions
 window.onscroll = () => {
   showNavButton();
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    if (current_page >= 2) {
+    if (current_page >= MAX_PAGES_INF_SCROLL) {
       console.log("Ok enough scrolling");
     } else {
       appendSearchResults();

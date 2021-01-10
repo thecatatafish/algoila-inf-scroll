@@ -1,3 +1,4 @@
+/* Turn off annoying defaults */
 input:focus,
 select:focus,
 textarea:focus,
@@ -43,6 +44,9 @@ body {
 }
 
 #searchinput {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+  border: 1px solid gray;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
