@@ -6,6 +6,10 @@ button:focus {
   outline: none;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   max-width: 980px;
   margin: auto;
