@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/egilgtxw/algoliaexample.egilsson.net/
+    - /bin/cp index.* $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
