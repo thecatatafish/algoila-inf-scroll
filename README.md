@@ -11,4 +11,4 @@ Therefore I made this small example project where I implemented an infinite scro
 
 
 ## Live Example
-[algoliaexample.egilsson.net](https://algoliaexample.egilsson.net)
+[https://thecatatafish.github.io/algolia-example/](https://thecatatafish.github.io/algolia-example/)
